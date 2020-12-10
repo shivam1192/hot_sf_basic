@@ -1,14 +1,17 @@
 import React, { useContext,useState } from 'react';
 import { Container, Row,Col, Card, Button, Modal } from 'react-bootstrap';
-
+import InfiniteScroll from "react-infinite-scroll-component";
 import { DataContext } from '../Context/DataContext';
 import '../App.css';
 import { BiUpArrowAlt } from "react-icons/bi";
 
 
 const ShowQuestion = () =>{
-    const {data,setData} = useContext(DataContext)
+    const {data,setData,page,setPage} = useContext(DataContext)
     const [show, setShow] = useState(false);
+    const [scrollTop, setscrollTop] = useState(0);
+
+    
     const [pop,setPop] = useState({
         "tags": [
         "javascript",
@@ -39,15 +42,28 @@ const ShowQuestion = () =>{
     const handleClose = () => setShow(false);
     const handleShow = () =>{
         setShow(true);
-        console.log(pop);
     } 
-    // console.log(data);
+    const onScroll = () => {
+        const scrollY = window.scrollY 
+        const scrollTop = this.myRef.current.scrollTop
+        console.log(`onScroll, window.scrollY: ${scrollY} myRef.scrollTop: ${scrollTop}`)
+        setscrollTop(scrollTop)
+      }
     return(
         <>
             <Container>
                 <Row>
                     <Col lg="12">
-                        {data?<>
+                                        {data?<>
+                                            <InfiniteScroll
+          dataLength={data.length}
+          next={()=>{console.log("hellow orld")
+          let p = page+1;
+            setPage(p)
+        }}
+          hasMore={true}
+          loader={<h4>Loading...</h4>}
+        >   
                         {data.map((data,key)=>{
                             return (
                                 <>
@@ -79,6 +95,7 @@ const ShowQuestion = () =>{
                         </>
                             )
                         })}
+                        </InfiniteScroll>
                         </>:<>Loading..</>}
                     </Col>
                 </Row>
