@@ -95,7 +95,7 @@ const ShowQuestion = () =>{
                                 <h5>{data.owner.display_name}</h5>
                                 </Col>
                                 <Col lg="8">
-                                <h5>{data.title}</h5>
+                                <h5>{data.title}</h5><br/><br/><br/>
                                 {data.tags.map((tag)=>{
                                     return (
                                         <>
@@ -140,7 +140,7 @@ const ShowQuestion = () =>{
                                 </Col>
                                 <Col lg="8">
                     <h5> Views:  {pop.view_count} Asked at:  10:12</h5>
-                                    {pop.is_answered?<>Answered</>:<>Not Answered</>}<br/>
+                                    {pop.is_answered?<>Answered</>:<>Not Answered</>}<br/><br/><br/><br/>
                                 {pop.tags.map((tag)=>{
                                     return (
                                         <>
