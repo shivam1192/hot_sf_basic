@@ -154,7 +154,7 @@ const ShowQuestion = () =>{
           </Modal.Body>
           <Modal.Footer>
             <Button variant="warning">
-                <a href={pop.link}> View on Stackoverflow</a>
+                <a href={pop.link} target="_blank"> View on Stackoverflow</a>
             </Button>
           </Modal.Footer>
         </Modal>
