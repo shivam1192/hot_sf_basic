@@ -10,7 +10,18 @@ const ShowQuestion = () =>{
     const {data,setData,page,setPage} = useContext(DataContext)
     const [show, setShow] = useState(false);
     const [scrollTop, setscrollTop] = useState(0);
-
+    const color1 = {
+        width:'70px',
+        border:'8px solid pink'
+    }
+    const color2 = {
+        width:'70px',
+        border:'8px solid blue'
+    }
+    const color3 = {
+        width:'70px', 
+        border:'8px solid red'
+    }
     
     const [pop,setPop] = useState({
         "tags": [
@@ -43,12 +54,7 @@ const ShowQuestion = () =>{
     const handleShow = () =>{
         setShow(true);
     } 
-    const onScroll = () => {
-        const scrollY = window.scrollY 
-        const scrollTop = this.myRef.current.scrollTop
-        console.log(`onScroll, window.scrollY: ${scrollY} myRef.scrollTop: ${scrollTop}`)
-        setscrollTop(scrollTop)
-      }
+  
     return(
         <>
             <Container>
@@ -74,7 +80,18 @@ const ShowQuestion = () =>{
                         <Card.Body>
                             <Row>
                                 <Col lg="4" style={{textAlign:'center'}}>
-                                <img src={data.owner.profile_image}/><br/><br/>
+                                    {data.owner.reputation<=100?<>
+                                        {data.owner.reputation<50?<>
+                                <img src={data.owner.profile_image} style={color1}/><br/><br/>
+                                        
+                                        </>:<>
+                                <img src={data.owner.profile_image} style={color2}/><br/><br/>
+                                        
+                                        </>}
+                                        
+                                    </>:<>
+                                <img src={data.owner.profile_image} style={color3}/><br/><br/>
+                                    </>}
                                 <h5>{data.owner.display_name}</h5>
                                 </Col>
                                 <Col lg="8">
@@ -107,7 +124,18 @@ const ShowQuestion = () =>{
           <Modal.Body>
           <Row>
                                 <Col lg="4" style={{textAlign:'center'}}>
-                                <img src={pop.owner.profile_image}/><br/><br/>
+                                {pop.owner.reputation<=100?<>
+                                        {pop.owner.reputation<50?<>
+                                <img src={pop.owner.profile_image} style={color1}/><br/><br/>
+                                        
+                                        </>:<>
+                                <img src={pop.owner.profile_image} style={color2}/><br/><br/>
+                                        
+                                        </>}
+                                        
+                                    </>:<>
+                                <img src={pop.owner.profile_image} style={color3}/><br/><br/>
+                                    </>}
                                 <h5>{pop.owner.display_name}</h5>
                                 </Col>
                                 <Col lg="8">
