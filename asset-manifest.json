@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/hot-sf-basic/static/css/main.2abc6a56.chunk.css",
+    "main.js": "/hot-sf-basic/static/js/main.970eec62.chunk.js",
+    "main.js.map": "/hot-sf-basic/static/js/main.970eec62.chunk.js.map",
+    "runtime-main.js": "/hot-sf-basic/static/js/runtime-main.09a5c623.js",
+    "runtime-main.js.map": "/hot-sf-basic/static/js/runtime-main.09a5c623.js.map",
+    "static/css/2.20aa2d7b.chunk.css": "/hot-sf-basic/static/css/2.20aa2d7b.chunk.css",
+    "static/js/2.738894d4.chunk.js": "/hot-sf-basic/static/js/2.738894d4.chunk.js",
+    "static/js/2.738894d4.chunk.js.map": "/hot-sf-basic/static/js/2.738894d4.chunk.js.map",
+    "static/js/3.0464b883.chunk.js": "/hot-sf-basic/static/js/3.0464b883.chunk.js",
+    "static/js/3.0464b883.chunk.js.map": "/hot-sf-basic/static/js/3.0464b883.chunk.js.map",
+    "index.html": "/hot-sf-basic/index.html",
+    "static/css/2.20aa2d7b.chunk.css.map": "/hot-sf-basic/static/css/2.20aa2d7b.chunk.css.map",
+    "static/css/main.2abc6a56.chunk.css.map": "/hot-sf-basic/static/css/main.2abc6a56.chunk.css.map",
+    "static/js/2.738894d4.chunk.js.LICENSE.txt": "/hot-sf-basic/static/js/2.738894d4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09a5c623.js",
+    "static/css/2.20aa2d7b.chunk.css",
+    "static/js/2.738894d4.chunk.js",
+    "static/css/main.2abc6a56.chunk.css",
+    "static/js/main.970eec62.chunk.js"
+  ]
+}
