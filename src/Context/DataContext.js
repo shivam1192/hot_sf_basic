@@ -5,6 +5,7 @@ export const DataContext = createContext()
 const DataContextProvider = (props) => {
     const [data,setData] = useState([])
     const [page,setPage] = useState(1)
+    const [searchData,setSearchdata] = useState('');
     useEffect(()=>{
         const fun = async() => {
             fetch('https://api.stackexchange.com/2.2/questions?order=desc&sort=hot&site=stackoverflow&page='+page)
@@ -15,7 +16,7 @@ const DataContextProvider = (props) => {
     },[page])
 
     return ( 
-        <DataContext.Provider value={{data,setData:setData,page,setPage:setPage}}>
+        <DataContext.Provider value={{data,setData:setData,page,setPage:setPage,searchData,setSearchdata:setSearchdata}}>
            {props.children}
         </DataContext.Provider>
      );

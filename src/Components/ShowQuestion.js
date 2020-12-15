@@ -7,13 +7,15 @@ import { BiUpArrowAlt } from "react-icons/bi";
 
 
 const ShowQuestion = () =>{
-    const {data,setData,page,setPage} = useContext(DataContext)
+    const {data,setData,page,setPage,searchData,setSearchdata} = useContext(DataContext)
     const [show, setShow] = useState(false);
-    const [scrollTop, setscrollTop] = useState(0);
     const color1 = {
         width:'70px',
         border:'8px solid pink'
     }
+    const dynamic = data.filter(d=>{
+        return d.title.toLowerCase().indexOf(searchData.toLowerCase() ) !==-1
+    }) 
     const color2 = {
         width:'70px',
         border:'8px solid blue'
@@ -70,9 +72,9 @@ const ShowQuestion = () =>{
           hasMore={true}
           loader={<h4>Loading...</h4>}
         >   
-                        {data.map((data,key)=>{
+                        {dynamic.map((data,key)=>{
                             return (
-                                <>
+                                <div>
                                 <Card onClick={() =>{
                                     handleShow()
                                     setPop(data)
@@ -109,7 +111,7 @@ const ShowQuestion = () =>{
                         </Card.Body>
                         </Card>
                         <br/>
-                        </>
+                        </div>
                             )
                         })}
                         </InfiniteScroll>
